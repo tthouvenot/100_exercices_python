@@ -2,4 +2,4 @@
 
 import os
 
-print(os.getcwd())
+print(f"Le dossier racine est: {os.getcwd()}")
