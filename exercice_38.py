@@ -3,11 +3,30 @@
 
 def clean_list(list):
 
-    for elem in list:
+    for element in list:
+        element_occurence = list.count(element)
 
-        element = elem
+        if element_occurence >= 2:
 
-        for i in range(len(list)):
+            for i in range(element_occurence-1):
+                list.remove(element)
 
-            if element == list[i]:
-                
+    list.sort()
+
+    return list
+
+print(clean_list([0,3,5,7,3,5,1,-1]))
+print(clean_list([0,5,9,10,3.2,1,-3]))
+
+#  Autre solution
+
+def clean_list_set(lst):
+
+    lst = set(lst)
+    lst = list(lst)
+
+    lst.sort()
+    return lst     
+
+print(clean_list_set([0,3,5,7,3,5,1,-1]))
+print(clean_list_set([0,5,9,10,3.2,1,-3]))     
